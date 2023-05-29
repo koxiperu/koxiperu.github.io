@@ -1,0 +1,9 @@
+
+main {
+    height:500px;
+    background-image: radial-gradient(violet 0%, darkblue 100%);
+}
+h1 {
+    color: white;
+    margin: 100px auto;
+}
