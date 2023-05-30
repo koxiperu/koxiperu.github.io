@@ -1,9 +1,62 @@
 
-main {
-    height:;
-    background-image: radial-gradient(violet 0%, darkblue 100%);
+body {
+    background-image: radial-gradient(rgb(251, 180, 57) 0%, darkblue 90%, violet 100%);
+    background-repeat: no-repeat;
+    background-position:bottom ;
+    background-size: 400% 600vh;
+    animation: grad-it 10s 0s linear infinite alternate; 
+    overflow: hidden;
 }
 h1 {
+    text-align: center;
     color: white;
-    margin: 100px auto;
+    text-shadow: 5px 5px 20px darkblue;
+    margin: 100px;
+    }
+
+    span {
+        position: absolute;
+animation:rocket-it 10s 0s linear infinite;
+overflow: hidden;
+    }
+
+
+@keyframes grad-it {
+    0% {
+        background-position: top;
+    }
+  25% {
+    background-position-x: left;
+  }
+    50% {
+        background-position: center;
+    }
+    75% {
+        background-position-x: right;
+    }
+    100% {
+        background-position: top;
+    }
+    
+
+}
+@keyframes rocket-it {
+0% {
+transform: translate(0, -100px) rotate(270deg);
+}
+25% {
+    transform: translate(50px, -100px) rotate(15deg);
+    }
+50% {
+    transform: translate(200px, -300px) rotate(120deg);
+}
+75% {
+    transform: translate(500px, 200px) rotate(180deg);
+}
+90% {
+    transform: translate(0px, 60px) rotate(360deg);
+}
+100% {
+    transform: translate(0, -100px);
+}
 }
