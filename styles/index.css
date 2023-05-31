@@ -12,13 +12,67 @@ h1 {
     color: white;
     text-shadow: 5px 5px 20px darkblue;
     margin: 100px;
+    position: relative;
+    z-index: 3;
     }
 
-    span {
+    .rocket {
+        font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 100;
+  color:white;
         position: absolute;
 animation:rocket-it 10s 0s linear infinite;
 overflow: hidden;
     }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 100;
+    position: absolute;
+}
+  
+    .star1 {   
+        color:red;     
+        top:20%;
+        left:20%;
+    }
+    .star2 {  
+        color:yellow;      
+        top:40%;
+        left:30%;
+    }
+    .star3 {  
+        color:blue;      
+        top:70%;
+        left:90%;
+    }
+    .star4 {  
+        color:green;      
+        top:60%;
+        left:10%;
+    }
+    .star5 {  
+        color:violet;      
+        top:10%;
+        left:40%;
+    }
+    .star6 {  
+        color:orange;      
+        top:30%;
+        left:80%;
+    }
+    .star7 {   
+        color:aqua;     
+        top:80%;
+        left:36%;
+    }
+
 
 
 @keyframes grad-it {
@@ -45,10 +99,10 @@ overflow: hidden;
 transform: translate(0, -100px) rotate(270deg);
 }
 25% {
-    transform: translate(50px, -100px) rotate(15deg);
+    transform: translate(50px, -100px) rotate(10deg);
     }
 50% {
-    transform: translate(200px, -300px) rotate(120deg);
+    transform: translate(200px, -300px) rotate(90deg);
 }
 75% {
     transform: translate(500px, 200px) rotate(180deg);
