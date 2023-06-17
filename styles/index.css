@@ -1,116 +1,85 @@
 
 body {
-    background-image: radial-gradient(rgb(251, 180, 57) 0%, darkblue 90%, violet 100%);
-    background-repeat: no-repeat;
-    background-position:bottom ;
-    background-size: 400% 600vh;
-    animation: grad-it 10s 0s linear infinite alternate; 
+    text-align: center;
     overflow: hidden;
+    
+}
+img {
+   position: absolute;
+   top:-800px;
+   left:-800px;
+   width: 3000px;
+   height: 3000px;
+animation: rotate-it 100s 1s linear infinite;
+}
+main {
+    position: fixed;
+    top:10%;
+    left:10%;
+    right:10%;
 }
 h1 {
     text-align: center;
     color: white;
     text-shadow: 5px 5px 20px darkblue;
-    margin: 100px;
-    position: relative;
-    z-index: 3;
+    word-wrap: normal;
     }
 
     .rocket {
         font-variation-settings:
   'FILL' 1,
   'wght' 700,
-  'GRAD' 200,
-  'opsz' 100;
+  'GRAD' 300,
+  'opsz' 200;
   color:white;
-        position: absolute;
-animation:rocket-it 10s 0s linear infinite;
+  position: fixed;
+  top:1vh;
+  left:1vw;
+animation:rocket-it 20s 0s ease-in-out infinite;
 overflow: hidden;
     }
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 200,
-  'opsz' 100;
-    position: absolute;
-}
-  
-    .star1 {   
-        color:red;     
-        top:20%;
-        left:20%;
-    }
-    .star2 {  
-        color:yellow;      
-        top:40%;
-        left:30%;
-    }
-    .star3 {  
-        color:blue;      
-        top:70%;
-        left:90%;
-    }
-    .star4 {  
-        color:green;      
-        top:60%;
-        left:10%;
-    }
-    .star5 {  
-        color:violet;      
-        top:10%;
-        left:40%;
-    }
-    .star6 {  
-        color:orange;      
-        top:30%;
-        left:80%;
-    }
-    .star7 {   
-        color:aqua;     
-        top:80%;
-        left:36%;
-    }
 
-
-
-@keyframes grad-it {
-    0% {
-        background-position: top;
+@keyframes rotate-it {
+    0% {transform: rotate(0deg);
     }
-  25% {
-    background-position-x: left;
-  }
-    50% {
-        background-position: center;
-    }
-    75% {
-        background-position-x: right;
-    }
+    50%{transform: rotate(-180deg);}
     100% {
-        background-position: top;
+    transform: rotate(-360deg);
     }
     
 
 }
 @keyframes rocket-it {
-0% {
-transform: translate(0, -100px) rotate(270deg);
+0% {transform: translate(1vh, 1vw);}
+2% {transform: translate(1vh, 1vw) rotate(45deg);}
+30%{transform: translate(90vw, 1vh) rotate(45deg)}
+35%{transform: translate(90vw, 1vh) rotate(135deg)}
+55%{transform:translate(90vw, 90vh) rotate(135deg)}
+60%{transform:translate(90vw, 90vh) rotate(225deg);}
+80% {transform: translate(1vw, 90vh) rotate(225deg)}
+85%{transform: translate(1vw, 90vh) rotate(315deg);}
+100% {transform: translate(1vw, 1vh) rotate(315deg);}
 }
-25% {
-    transform: translate(50px, -100px) rotate(10deg);
-    }
-50% {
-    transform: translate(200px, -300px) rotate(90deg);
+#newJoke {
+    background-color: rgb(135, 134, 247);
+    border-radius: 20px; 
+    border:2px solid rgb(222, 222, 248);
+    box-shadow: 10px 10px 20px rgb(186, 185, 250);
+    color: rgb(10, 3, 143);
+    text-shadow: 1px 1px 10px rgb(3, 130, 215);
+    font-size: 150%;
+    font-weight: 900;   
+    padding:20px;
 }
-75% {
-    transform: translate(500px, 200px) rotate(180deg);
-}
-90% {
-    transform: translate(0px, 60px) rotate(360deg);
-}
-100% {
-    transform: translate(0, -100px);
-}
+
+div {
+    display: none;
+    background-image:radial-gradient(white 20%, rgb(158, 158, 251)60%, rgb(112, 6, 144));
+    box-shadow: 0 0 20px rgb(112, 6, 144);
+    border-radius: 50px;
+    margin: 30px auto;
+    padding:20px;
+    width:80%;
+    height: fit-content;
 }
