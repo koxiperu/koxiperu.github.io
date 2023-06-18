@@ -6,10 +6,10 @@ body {
 }
 img {
    position: absolute;
-   top:-800px;
-   left:-800px;
-   width: 3000px;
-   height: 3000px;
+   top:-100%;
+   left:-100%;
+   width: 300%;
+   height: 300%;
 animation: rotate-it 100s 1s linear infinite;
 }
 main {
