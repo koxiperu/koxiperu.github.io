@@ -38,10 +38,10 @@ h1 {
   'GRAD' 300,
   'opsz' 200;
   color:white;
-  position: fixed;
-  top:10vh;
-  left:10vw;
-animation:rocket-it 20s 0s ease-in-out infinite;
+  position: absolute;
+  top:5vh;
+  left:5vw;
+animation:rocket-it 10s 0s ease-in-out infinite;
 overflow: hidden;
     }
 
@@ -57,15 +57,15 @@ overflow: hidden;
 
 }
 @keyframes rocket-it {
-0% {transform: translate(10vh, 10vw);}
-2% {transform: translate(10vh, 10vw) rotate(45deg);}
-30%{transform: translate(90vw, 10vh) rotate(45deg)}
-35%{transform: translate(90vw, 10vh) rotate(135deg)}
-55%{transform:translate(90vw, 90vh) rotate(135deg)}
-60%{transform:translate(90vw, 90vh) rotate(225deg);}
-80% {transform: translate(10vw, 90vh) rotate(225deg)}
-85%{transform: translate(10vw, 90vh) rotate(315deg);}
-100% {transform: translate(10vw, 10vh) rotate(315deg);}
+0% {transform: translate(5vw, 5vh);}
+2% {transform: translate(5vw, 5vh) rotate(45deg);}
+30%{transform: translate(80vw, 5vh) rotate(45deg)}
+35%{transform: translate(80vw, 5vh) rotate(135deg)}
+55%{transform:translate(80vw, 80vh) rotate(135deg)}
+60%{transform:translate(80vw, 80vh) rotate(225deg);}
+80% {transform: translate(5vw, 80vh) rotate(225deg)}
+85%{transform: translate(5vw, 80vh) rotate(315deg);}
+100% {transform: translate(5vw, 5vh) rotate(360deg);}
 }
 #newJoke {
     background-color: rgb(135, 134, 247);
