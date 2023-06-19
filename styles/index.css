@@ -1,22 +1,28 @@
-
-body {
-    text-align: center;
-    overflow: hidden;
-    
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
+
+body {    
+    width: 100vw;
+    max-height: 100vh;
+    
+} 
 img {
-   position: absolute;
-   top:-100%;
-   left:-100%;
-   width: 300%;
-   height: 300%;
+   position: fixed;
+   z-index: -100;
+   top:-200vh;
+   left:-200vw;
+   width: 500vw;
+   height: 500vh;
+   overflow: hidden;
 animation: rotate-it 100s 1s linear infinite;
 }
 main {
-    position: fixed;
-    top:10%;
-    left:10%;
-    right:10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 h1 {
     text-align: center;
@@ -33,8 +39,8 @@ h1 {
   'opsz' 200;
   color:white;
   position: fixed;
-  top:1vh;
-  left:1vw;
+  top:10vh;
+  left:10vw;
 animation:rocket-it 20s 0s ease-in-out infinite;
 overflow: hidden;
     }
@@ -51,15 +57,15 @@ overflow: hidden;
 
 }
 @keyframes rocket-it {
-0% {transform: translate(1vh, 1vw);}
-2% {transform: translate(1vh, 1vw) rotate(45deg);}
-30%{transform: translate(90vw, 1vh) rotate(45deg)}
-35%{transform: translate(90vw, 1vh) rotate(135deg)}
+0% {transform: translate(10vh, 10vw);}
+2% {transform: translate(10vh, 10vw) rotate(45deg);}
+30%{transform: translate(90vw, 10vh) rotate(45deg)}
+35%{transform: translate(90vw, 10vh) rotate(135deg)}
 55%{transform:translate(90vw, 90vh) rotate(135deg)}
 60%{transform:translate(90vw, 90vh) rotate(225deg);}
-80% {transform: translate(1vw, 90vh) rotate(225deg)}
-85%{transform: translate(1vw, 90vh) rotate(315deg);}
-100% {transform: translate(1vw, 1vh) rotate(315deg);}
+80% {transform: translate(10vw, 90vh) rotate(225deg)}
+85%{transform: translate(10vw, 90vh) rotate(315deg);}
+100% {transform: translate(10vw, 10vh) rotate(315deg);}
 }
 #newJoke {
     background-color: rgb(135, 134, 247);
@@ -68,18 +74,18 @@ overflow: hidden;
     box-shadow: 10px 10px 20px rgb(186, 185, 250);
     color: rgb(10, 3, 143);
     text-shadow: 1px 1px 10px rgb(3, 130, 215);
-    font-size: 150%;
+    font-size: 30px;
     font-weight: 900;   
-    padding:20px;
+    padding:10px;
+    margin:10px auto;
 }
 
 div {
     display: none;
-    background-image:radial-gradient(white 20%, rgb(158, 158, 251)60%, rgb(112, 6, 144));
-    box-shadow: 0 0 20px rgb(112, 6, 144);
-    border-radius: 50px;
-    margin: 30px auto;
-    padding:20px;
+    box-shadow: 0 0 20px rgb(42, 1, 54);
+    border-radius: 10px;
+    margin: 1% auto;
+    padding:1%;
     width:80%;
     height: fit-content;
 }
