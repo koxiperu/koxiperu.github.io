@@ -9,7 +9,7 @@ body {
     max-height: 100vh;
     
 } 
-img {
+#galaxy {
    position: fixed;
    z-index: -100;
    top:-200vh;
@@ -29,6 +29,7 @@ h1 {
     color: white;
     text-shadow: 5px 5px 20px darkblue;
     word-wrap: normal;
+    font-size: 40px;
     }
 
     .rocket {
@@ -44,8 +45,6 @@ h1 {
 animation:rocket-it 10s 0s ease-in-out infinite;
 overflow: hidden;
     }
-
-
 @keyframes rotate-it {
     0% {transform: rotate(0deg);
     }
@@ -67,25 +66,35 @@ overflow: hidden;
 85%{transform: translate(5vw, 80vh) rotate(315deg);}
 100% {transform: translate(5vw, 5vh) rotate(360deg);}
 }
-#newJoke {
+
+
+
+.buttons * {
     background-color: rgb(135, 134, 247);
-    border-radius: 20px; 
-    border:2px solid rgb(222, 222, 248);
-    box-shadow: 10px 10px 20px rgb(186, 185, 250);
+    border-radius: 15px; 
+    box-shadow: 10px 10px 20px rgb(30, 30, 65);
     color: rgb(10, 3, 143);
     text-shadow: 1px 1px 10px rgb(3, 130, 215);
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 900;   
     padding:10px;
-    margin:10px auto;
+    width:max-content;
+}
+.buttons{    
+    display: flex;
+    flex-direction: row;
+    gap:10%;
+    justify-content: center;
+    margin:5% auto;
 }
 
-div {
+#answField {
     display: none;
     box-shadow: 0 0 20px rgb(42, 1, 54);
     border-radius: 10px;
     margin: 1% auto;
     padding:1%;
-    width:80%;
+    width:fit-content;
     height: fit-content;
+    text-align: center;
 }
