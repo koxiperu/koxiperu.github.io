@@ -38,8 +38,8 @@ document.querySelector("#launch").addEventListener("click", function(){
      rX=Math.floor(Math.random()*rangeW);    
      rY=Math.floor(Math.random()*rangeH);
      while(i==false) {
-         if((rX>25)&&(rX<75)&&(rY>25)&&(rY<75)){
-             if((rX>25)&&(rX<75)){
+         if((rX>20)&&(rX<80)&&(rY>20)&&(rY<80)){
+             if((rX>20)&&(rX<80)){
                  rX=Math.floor(Math.random()*rangeW);
              }else{
                  rY=Math.floor(Math.random()*rangeH);
