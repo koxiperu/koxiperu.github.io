@@ -31,8 +31,8 @@ h1 {
   font-size: 40px;
 }
 #parkingPlaz {
-  width:70px;
-  height:70px;
+  width:80px;
+  height:80px;
   border:3px solid darkblue;
   color:darkblue;
   text-align: center;
@@ -54,10 +54,10 @@ h1 {
 }
 .satellite {
   font-variation-settings: "FILL" 1, "wght" 900, "GRAD" 0, "opsz" 48;
-  color: white;
+  color: rgb(70, 102, 243);
   position:absolute;
-  top:0;
-  left:0;
+  top:8px;
+  left:8px;
   transition:transform 10s ease-in-out;
   z-index: -98;
 }
@@ -108,15 +108,16 @@ span.size-48 {
 }
 
 #launch {
-  width:max-content;
+  width:80px;
+  height:80px;
   background-color: orange;
   padding:10px;
   border-radius: 15px;
   color:darkslateblue;
   font-size: 12px;
   position:absolute;
-  top: 10px;;
-  right: 10px;;
+  top: 0px;
+  left: 90px;
 }
 .buttons * {
   background-color: rgba(135, 134, 247, 0.5);

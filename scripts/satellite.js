@@ -13,10 +13,12 @@ document.querySelector("#launch").addEventListener("click", function(){
         pushed=false;
         clearInterval(infinite);
         satellite.style.transform="translate(0, 0) rotate(0deg)";
+        document.querySelector(".satellite").style.color="rgb(70, 102, 243)";
     } else {
         document.querySelector("#launch").style.backgroundColor="rgb(116, 76, 3)";
         document.querySelector("#launch").style.color="white";
         document.querySelector("#launch").innerText="park a satellite";
+        document.querySelector(".satellite").style.color="white";
         pushed=true;
         moveSatellite();
         infinite=setInterval(moveSatellite,10000);
