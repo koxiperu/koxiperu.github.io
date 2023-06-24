@@ -15,7 +15,7 @@ document.querySelector("#newExercise").addEventListener("click", function(){
     const objUrl=obj.gifUrl;   
     document.querySelector("#answField").style.display="block";
     document.querySelector("#answField img").style.display="block";
-    document.querySelector("#answField").style.backgroundColor="white";
+    document.querySelector("#answField").style.backgroundColor="black";
     document.querySelector("#quest").innerText=obj.name;
     document.querySelector("#answ").innerText="("+obj.bodyPart+")";
     document.querySelector("#answField img").src=objUrl;

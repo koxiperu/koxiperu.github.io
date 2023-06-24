@@ -119,26 +119,27 @@ span.size-48 {
   right: 10px;;
 }
 .buttons * {
-  background-color: rgb(135, 134, 247);
+  background-color: rgba(135, 134, 247, 0.5);
   border-radius: 15px;
   box-shadow: 10px 10px 20px rgb(30, 30, 65);
   color: rgb(10, 3, 143);
   text-shadow: 1px 1px 10px rgb(3, 130, 215);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
-  padding: 10px;
-  width: max-content;
+  padding: 8px;
+  width:30%;
 }
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 10%;
+  gap: 5%;
   justify-content: center;
   margin: 5% auto;
 }
 
 #answField {
   display: none;
+  background-color: rgba(248, 8, 228, 0.2);
   box-shadow: 0 0 20px rgb(42, 1, 54);
   border-radius: 10px;
   margin: 1% auto;
@@ -146,4 +147,8 @@ span.size-48 {
   width: fit-content;
   height: fit-content;
   text-align: center;
+  color:white;
+}
+#answField *{
+  margin:0 auto;
 }

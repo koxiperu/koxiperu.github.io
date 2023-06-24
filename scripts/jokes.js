@@ -14,5 +14,6 @@ document.querySelector("#newJoke").addEventListener("click", function(){
     document.querySelector("#answField").style.display="block";
     document.querySelector("#quest").innerText="- "+q;
     document.querySelector("#answ").innerText="- "+a;
+    document.querySelector("#answ").style.display="block";
 });  
 })
