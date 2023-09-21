@@ -1,0 +1,8 @@
+:root {
+    --dark-color: rgb(53, 29, 109);
+    --shadow-color:rgb(153, 115, 170);
+    --light-color: rgb(195, 173, 247);
+    --text-color: rgb(53, 17, 70);
+    --subjects-color: rgb(241, 97, 157);
+    --my-font: 'Ubuntu', sans-serif;
+}

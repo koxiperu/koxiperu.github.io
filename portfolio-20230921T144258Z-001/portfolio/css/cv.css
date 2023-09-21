@@ -1,0 +1,22 @@
+
+body {
+    background-color: var(--light-color);
+    display: grid;
+    justify-content: center;
+    padding-top: 30px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-shadow: 3px 3px 3px 3px var(--shadow-color);
+}
+
+#main-container {
+    background-color: aliceblue;
+    padding: 30px;
+    width: 80vw;
+    min-height: 90vh;
+    border-radius: 50px;
+}
+#main-section {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto auto auto;
+}

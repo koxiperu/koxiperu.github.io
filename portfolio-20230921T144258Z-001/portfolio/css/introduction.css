@@ -1,0 +1,43 @@
+#introduction-section {
+    display: flex;
+    display: grid;
+    justify-items: center;
+    -ms-flex-item-align: center;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+#inroduction-section > * {
+    max-width: 50%;
+    min-width: 50px;
+}
+#introduction-section #job-title {
+    color:var(--text-color);
+    margin-top: 20px;
+}
+#introduction-section #my-name {
+    font-size: 40px;
+}
+
+img {
+    min-width: 100px;
+    max-width: 200px;
+    height: auto;
+    box-shadow: 5px 5px 5px 5px var(--shadow-color);
+    border-radius: 50px;
+}
+#job-title {
+    color:var(--text-color);
+    text-shadow: 5px;
+    font-size:30px;
+    text-align: center;
+}
+#text {
+    font-size:20px;
+    text-align: center;
+}
+#name {
+    font-size: 40px;
+    text-align: center;
+}
