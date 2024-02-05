@@ -153,3 +153,20 @@ span.size-48 {
 #answField *{
   margin:0 auto;
 }
+.mail{
+  width: max-length;
+  height:fit-content;
+  background-color: darkslateblue;
+  padding:10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(42, 1, 54);
+  color: white;
+  font-size: 12px;
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+}
+
