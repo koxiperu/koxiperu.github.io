@@ -29,6 +29,7 @@ h1 {
   text-shadow: 5px 5px 20px darkblue;
   word-wrap: normal;
   font-size: 40px;
+  margin: 5%
 }
 #parkingPlaz {
   width:80px;
@@ -155,7 +156,8 @@ span.size-48 {
   margin:0 auto;
 }
 .mail{
-  width: max-length;
+  width: auto;
+  max-width: 40%;
   height:fit-content;
   background-color: darkslateblue;
   padding:10px 20px;
