@@ -44,13 +44,13 @@ export default function Skills() {
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b pb-4">Skills & Competencies</h2>
+      <h2 className="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">Skills & Competencies</h2>
       
       <div className="space-y-10">
         {skillCategories.map((category, idx) => (
           <div key={idx}>
-            <h3 className="text-xl font-bold text-blue-600 mb-6 flex items-center">
-              <span className="w-2 h-6 bg-blue-600 rounded-full mr-3"></span>
+            <h3 className="text-xl font-bold text-brand-purple mb-6 flex items-center">
+              <span className="w-2 h-6 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
               {category.title}
             </h3>
             
@@ -58,13 +58,13 @@ export default function Skills() {
               {category.skills.map((skill, sIdx) => (
                 <div 
                   key={sIdx} 
-                  className="flex justify-between items-center p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:border-blue-200 hover:shadow-md transition-all group"
+                  className="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/10 shadow-sm hover:border-brand-purple/40 hover:bg-white/10 transition-all group"
                 >
-                  <span className="text-gray-700 font-medium group-hover:text-gray-900">
+                  <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
                     {skill.name}
                   </span>
                   {skill.level && (
-                    <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 bg-gray-100 text-gray-500 rounded-md">
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-brand-purple/10 text-brand-purple rounded border border-brand-purple/20">
                       {skill.level}
                     </span>
                   )}

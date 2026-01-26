@@ -25,7 +25,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-brand-dark">
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       <main className="pt-16 fade-in">
         {renderPage()}

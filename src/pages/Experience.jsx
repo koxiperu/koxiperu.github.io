@@ -62,25 +62,24 @@ export default function Experience() {
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b pb-4">Experience</h2>
+      <h2 className="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">Experience</h2>
       <div className="space-y-12">
         {experiences.map((exp, index) => (
           <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-8 relative">
-            {/* Timeline line for desktop */}
-            <div className="hidden md:block absolute left-[25%] top-0 bottom-0 w-px bg-gray-200 -ml-px transform -translate-x-1/2"></div>
+            <div className="hidden md:block absolute left-[25%] top-0 bottom-0 w-px bg-white/10 -ml-px transform -translate-x-1/2"></div>
             
             <div className="md:w-1/4 flex-shrink-0 md:text-right md:pr-8 relative z-10">
-              <div className="font-bold text-gray-800 text-lg">{exp.period}</div>
+              <div className="font-bold text-brand-purple text-lg">{exp.period}</div>
               <div className="text-sm text-gray-500 font-medium">{exp.location}</div>
             </div>
             
-            <div className="md:w-3/4 bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative z-10">
-              <h3 className="text-xl font-bold text-gray-800">{exp.role}</h3>
-              <div className="text-blue-600 font-medium mb-3">{exp.company}</div>
-              <ul className="space-y-2 text-gray-600">
+            <div className="md:w-3/4 bg-white/5 p-6 rounded-xl border border-white/10 hover:border-brand-purple/30 transition-colors relative z-10 group">
+              <h3 className="text-xl font-bold text-white group-hover:text-brand-purple transition-colors">{exp.role}</h3>
+              <div className="text-brand-pink font-medium mb-3">{exp.company}</div>
+              <ul className="space-y-2 text-gray-400">
                 {exp.description.map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-blue-400 rounded-full flex-shrink-0"></span>
+                    <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-brand-orange rounded-full flex-shrink-0 shadow-[0_0_5px_rgba(242,153,74,0.8)]"></span>
                     <span>{item}</span>
                   </li>
                 ))}
