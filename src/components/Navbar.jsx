@@ -66,16 +66,16 @@ export default function Navbar({ activePage, setActivePage }) {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 animate-in fade-in slide-in-from-top duration-200">
+        <div className="md:hidden bg-white border-b border-gray-100 shadow-lg absolute w-full left-0 z-40">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                className={`block w-full text-left px-4 py-3 rounded-md text-base font-semibold ${
                   activePage === item.id
                     ? 'bg-blue-50 text-blue-600'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-blue-500'
+                    : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
                 {item.label}

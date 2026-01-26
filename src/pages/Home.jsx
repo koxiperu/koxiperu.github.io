@@ -7,7 +7,7 @@ export default function Home() {
         <img 
           src={photo} 
           alt="Anna Bushueva" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[center_30%]"
         />
       </div>
       
