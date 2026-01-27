@@ -52,7 +52,7 @@ export default function Education() {
       </div>
 
       <div>
-        <h3 className="text-4xl font-bold text-brand-pink mb-6 flex items-center no-star-interaction">
+        <h3 className="text-4xl font-bold text-brand-purple mb-6 flex items-center no-star-interaction">
            <span className="w-2 h-8 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
            Certifications
         </h3>
