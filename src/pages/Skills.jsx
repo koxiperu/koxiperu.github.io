@@ -60,7 +60,7 @@ export default function Skills() {
                   key={sIdx} 
                   className="flex justify-between items-center p-4 bg-brand-dark rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all group"
                 >
-                  <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
+                  <span className="text-white font-medium group-hover:text-white transition-colors">
                     {skill.name}
                   </span>
                   {skill.level && (

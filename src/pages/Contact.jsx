@@ -32,7 +32,7 @@ export default function Contact() {
         }
       }
     } catch (error) {
-      setStatus("error");
+      setStatus("error: "+error);
     }
   };
 

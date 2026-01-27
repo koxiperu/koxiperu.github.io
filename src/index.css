@@ -8,11 +8,11 @@
   --color-brand-green: #20483b;  
   --color-brand-orange: #ff5601;  /* Sunset Orange */
   --color-brand-pink: #ad5757;    /* Vibrant Coral */
-  --color-brand-dark: #12122b;    /* Deep Midnight */
+  --color-brand-dark: #000023;    /* Deep Midnight */
 }
 
 :root {
-  background-color: #12122b;
+  background-color: #000023;
   color: #f8fafc;
 }
 
