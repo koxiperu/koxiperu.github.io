@@ -1,6 +1,6 @@
 import photo from '../assets/photo.jpg';
 
-export default function Home() {
+export default function Home({ setActivePage }) {
   return (
     <div className="relative flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-4rem)] gap-10 px-4 overflow-hidden">
       {/* Dynamic Background for Home Page */}
@@ -30,10 +30,17 @@ export default function Home() {
           backend development and cloud tools.
         </p>
         <div className="pt-4 flex gap-4 justify-center md:justify-start">
-            <button className="px-8 py-3 bg-gradient-to-r from-brand-purple to-brand-pink text-white rounded-xl hover:opacity-90 transition-all duration-300 font-bold shadow-xl shadow-brand-purple/20 transform hover:-translate-y-1">
+            <a 
+              href="/CV_Anna_Bushueva.pdf" 
+              download="CV_Anna_Bushueva.pdf"
+              className="px-8 py-3 bg-brand-dark border border-bright-blue/40 text-white rounded-xl font-bold shadow-[0_0_12px_rgba(51,73,139,0.9)] no-star-interaction transition-all duration-300 transform hover:-translate-y-1 hover:bg-black inline-block"
+            >
                 Download CV
-            </button>
-            <button className="px-8 py-3 border border-white/20 text-white rounded-xl hover:bg-white/10 transition-all duration-300 font-medium">
+            </a>
+            <button 
+              onClick={() => setActivePage('contact')}
+              className="px-8 py-3 bg-brand-dark border border-brand-pink/40 text-white rounded-xl font-bold shadow-[0_0_12px_rgba(173,87,87,0.9)] no-star-interaction transition-all duration-300 transform hover:-translate-y-1 hover:bg-black cursor-pointer"
+            >
                 Contact Me
             </button>
         </div>

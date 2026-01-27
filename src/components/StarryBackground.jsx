@@ -47,8 +47,8 @@ const StarryBackground = () => {
     };
 
     const spawnMeteor = () => {
-        const x = Math.random() * width;
-        const y = Math.random() * height * 0.5; // Spawn in upper half
+        //const x = Math.random() * width;
+        //const y = Math.random() * height * 0.5; // Spawn in upper half
         meteors.push({
             x: Math.random() > 0.5 ? Math.random() * width : -50, // Either random top or left
             y: Math.random() > 0.5 ? -50 : Math.random() * height * 0.5, 

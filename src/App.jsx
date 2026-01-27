@@ -15,14 +15,14 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
-      case 'home': return <Home />;
+      case 'home': return <Home setActivePage={setActivePage} />;
       case 'about': return <About />;
       case 'skills': return <Skills />;
       case 'experience': return <Experience />;
       case 'education': return <Education />;
       case 'projects': return <Projects />;
       case 'contact': return <Contact />;
-      default: return <Home />;
+      default: return <Home setActivePage={setActivePage} />;
     }
   };
 
