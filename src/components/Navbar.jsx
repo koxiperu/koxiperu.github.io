@@ -29,6 +29,7 @@ export default function Navbar({ activePage, setActivePage }) {
             Anna Bushueva
           </div>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <button
@@ -45,6 +46,7 @@ export default function Navbar({ activePage, setActivePage }) {
             ))}
           </div>
 
+          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -62,17 +64,18 @@ export default function Navbar({ activePage, setActivePage }) {
         </div>
       </div>
 
+      {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-brand-red border-t border-white/10 absolute w-full left-0 z-40 shadow-2xl">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-gradient-to-b from-brand-orange to-brand-purple border-l border-white/10 absolute right-0 w-1/2 z-40 shadow-2xl overflow-hidden rounded-bl-2xl">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left px-4 py-3 rounded-md text-base font-bold ${
+                className={`block w-full text-left px-4 py-3 rounded-md text-base font-bold transition-colors ${
                   activePage === item.id
-                    ? 'bg-white text-brand-red shadow-inner'
-                    : 'text-white hover:bg-white/10'
+                    ? 'bg-brand-dark-blue text-white shadow-inner'
+                    : 'text-white hover:bg-brand-dark-blue/50'
                 }`}
               >
                 {item.label}
