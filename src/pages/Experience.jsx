@@ -73,7 +73,7 @@ export default function Experience() {
               <div className="text-sm text-gray-500 font-medium">{exp.location}</div>
             </div>
             
-            <div className="md:w-3/4 bg-white/5 p-6 rounded-xl border border-white/10 hover:border-brand-purple/30 transition-colors relative z-10 group">
+            <div className="md:w-3/4 bg-brand-dark p-6 rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all relative z-10 group">
               <h3 className="text-xl font-bold text-white group-hover:text-brand-purple transition-colors">{exp.role}</h3>
               <div className="text-brand-pink font-medium mb-3">{exp.company}</div>
               <ul className="space-y-2 text-gray-400">

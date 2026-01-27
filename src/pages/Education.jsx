@@ -31,10 +31,13 @@ export default function Education() {
       <h2 className="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">Education & Certificates</h2>
       
       <div className="mb-12">
-        <h3 className="text-2xl font-bold text-brand-purple mb-6 flex items-center">Academic Education</h3>
+        <h3 className="text-4xl font-bold text-brand-purple mb-6 flex items-center no-star-interaction">
+          <span className="w-2 h-8 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
+          Academic Education
+        </h3>
         <div className="grid gap-6">
           {education.map((edu, index) => (
-            <div key={index} className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-brand-purple/30 transition-all">
+            <div key={index} className="bg-brand-dark p-6 rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all">
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
                 <h4 className="text-xl font-bold text-white">{edu.degree}</h4>
                 <span className="inline-block px-3 py-1 bg-brand-purple/10 text-brand-purple rounded-full text-sm font-medium mt-2 md:mt-0">
@@ -49,20 +52,20 @@ export default function Education() {
       </div>
 
       <div>
-        <h3 className="text-2xl font-bold text-brand-pink mb-6 flex items-center">Certifications</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h3 className="text-4xl font-bold text-brand-pink mb-6 flex items-center no-star-interaction">
+           <span className="w-2 h-8 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
+           Certifications
+        </h3>
+        <div className="grid gap-6">
           {certificates.map((cert, index) => (
-            <div key={index} className="flex items-start p-4 bg-white/5 rounded-lg border border-white/10 hover:border-brand-pink/30 transition-all group">
-              <div className="flex-shrink-0 mr-3 mt-1">
-                <div className="w-2 h-2 rounded-full bg-brand-pink shadow-[0_0_5px_rgba(235,87,87,0.8)]"></div>
+            <div key={index} className="bg-brand-dark p-6 rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                <h4 className="text-xl font-bold text-white">{cert.title}</h4>
+                <span className="inline-block px-3 py-1 bg-brand-purple/10 text-brand-purple rounded-full text-sm font-medium mt-2 md:mt-0">
+                  {cert.year}
+                </span>
               </div>
-              <div>
-                <h5 className="font-semibold text-gray-200 leading-tight mb-1 group-hover:text-white transition-colors">{cert.title}</h5>
-                <div className="text-sm text-gray-500 flex justify-between w-full gap-4">
-                  <span>{cert.issuer}</span>
-                  <span className="font-medium text-brand-purple/60">{cert.year}</span>
-                </div>
-              </div>
+              <div className="text-lg text-brand-orange font-medium">{cert.issuer}</div>
             </div>
           ))}
         </div>

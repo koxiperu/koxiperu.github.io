@@ -45,7 +45,7 @@ export default function Contact() {
                 href={info.link}
                 target={info.link.startsWith('http') ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                className="flex items-center p-4 bg-white/5 rounded-xl border border-white/10 hover:border-brand-purple/30 hover:bg-white/10 transition-all group"
+                className="flex items-center p-4 bg-brand-dark rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all group"
               >
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-4 bg-white/5 group-hover:bg-brand-purple/20 transition-colors`}>
                   <div className={`w-2 h-2 rounded-full ${index % 2 === 0 ? 'bg-brand-purple shadow-[0_0_8px_rgba(155,81,224,0.8)]' : 'bg-brand-orange shadow-[0_0_8px_rgba(242,153,74,0.8)]'}`}></div>
@@ -59,7 +59,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="bg-white/5 rounded-2xl p-8 border border-white/10 shadow-xl">
+        <div className="bg-brand-dark rounded-2xl p-8 border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction">
           <h3 className="text-xl font-bold text-white mb-6">Send a Quick Message</h3>
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
             <div>

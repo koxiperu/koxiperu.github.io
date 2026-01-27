@@ -8,6 +8,8 @@ import Education from './pages/Education';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
+import StarryBackground from './components/StarryBackground';
+
 function App() {
   const [activePage, setActivePage] = useState('home');
 
@@ -25,7 +27,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark">
+    <div className="min-h-screen">
+      <StarryBackground />
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       <main className="pt-16 fade-in">
         {renderPage()}

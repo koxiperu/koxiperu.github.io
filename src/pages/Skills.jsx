@@ -49,8 +49,8 @@ export default function Skills() {
       <div className="space-y-10">
         {skillCategories.map((category, idx) => (
           <div key={idx}>
-            <h3 className="text-xl font-bold text-brand-purple mb-6 flex items-center">
-              <span className="w-2 h-6 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
+            <h3 className="text-4xl font-bold text-brand-purple mb-6 flex items-center no-star-interaction">
+              <span className="w-2 h-8 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
               {category.title}
             </h3>
             
@@ -58,7 +58,7 @@ export default function Skills() {
               {category.skills.map((skill, sIdx) => (
                 <div 
                   key={sIdx} 
-                  className="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/10 shadow-sm hover:border-brand-purple/40 hover:bg-white/10 transition-all group"
+                  className="flex justify-between items-center p-4 bg-brand-dark rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all group"
                 >
                   <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
                     {skill.name}
