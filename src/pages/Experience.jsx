@@ -67,7 +67,7 @@ export default function Experience() {
   return (
     <Section>
       <Container className="max-w-5xl">
-        <header className="mb-16 no-star-interaction">
+        <header className="mb-20 no-star-interaction">
           <h2 className="text-xs font-bold tracking-[0.4em] text-slate-500 uppercase mb-3">
             Career Journey
           </h2>
@@ -79,36 +79,41 @@ export default function Experience() {
           </div>
         </header>
 
-        <div className="space-y-12">
-          {experiences.map((exp, index) => (
-            <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-12 relative items-start">
-              
-              <div className="md:w-1/4 flex-shrink-0 flex items-start gap-6 md:pr-4 no-star-interaction">
-                <div className="flex-1 md:text-right flex flex-col justify-start pt-1">
+        <div className="relative">
+          {/* Main Timeline Vertical Line */}
+          <div className="absolute left-[3px] md:left-[calc(25%+1.5rem)] top-2 bottom-0 w-px bg-brand-accent/20"></div>
+
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div key={index} className="relative pl-8 md:pl-0 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+                
+                {/* Left Side: Chronological Info */}
+                <div className="md:w-1/4 flex-shrink-0 md:text-right no-star-interaction pt-1">
                   <div className="font-mono font-bold text-brand-accent text-sm tracking-tighter mb-1">{exp.period}</div>
                   <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-2">{exp.location}</div>
                   <div className="text-slate-300 font-semibold text-base leading-tight">{exp.company}</div>
                 </div>
-                <div className="hidden md:flex flex-col items-center pt-2 self-stretch">
-                  <span className="w-1 h-full bg-white/5 rounded-full relative">
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-accent/40 rounded-full shadow-[0_0_8px_rgba(56,189,248,0.4)]"></span>
-                  </span>
+
+                {/* Timeline Marker (Dot) */}
+                <div className="absolute left-[-1px] md:left-[calc(25%+1.5rem-4px)] top-2 flex flex-col items-center z-20">
+                  <div className="w-2 h-2 rounded-full bg-brand-dark border-2 border-brand-accent shadow-[0_0_8px_rgba(56,189,248,0.6)]"></div>
                 </div>
+                
+                {/* Right Side: Content Card */}
+                <Card variant="default" className="w-full md:w-3/4 no-star-interaction group border-white/[0.03]">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors duration-500 mb-6">{exp.role}</h3>
+                  <ul className="space-y-4">
+                    {exp.description.map((item, i) => (
+                      <li key={i} className="flex items-start text-slate-400 leading-relaxed">
+                        <span className="mr-3 mt-2.5 w-1 h-1 bg-brand-accent/30 rounded-full flex-shrink-0"></span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
               </div>
-              
-              <Card variant="default" className="md:w-3/4 no-star-interaction group border-white/[0.03]">
-                <h3 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors duration-500 mb-6">{exp.role}</h3>
-                <ul className="space-y-4">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="flex items-start text-slate-400 leading-relaxed">
-                      <span className="mr-3 mt-2.5 w-1 h-1 bg-brand-accent/30 rounded-full flex-shrink-0"></span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </Section>
