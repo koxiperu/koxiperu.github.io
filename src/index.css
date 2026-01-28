@@ -1,31 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #6187f6; 
-  --color-bright-blue: #33498b; 
-  --color-brand-dark-blue: #1d2b3b;    /* Deep Ocean Blue */
-  --color-brand-purple: #3300ff;
-  --color-brand-green: #20483b;  
-  --color-brand-orange: #ff5601;  /* Sunset Orange */
-  --color-brand-pink: #ad5757;    /* Vibrant Coral */
-  --color-brand-dark: #000023;    /* Deep Midnight */
+  --color-brand-primary: #94a3b8;   /* Muted Silver/Slate */
+  --color-brand-accent: #38bdf8;    /* Single Ice-Blue accent */
+  --color-brand-dark: #0b1120;      /* Soft Midnight Blue (less harsh than 020617) */
+  --color-brand-surface: #1e293b;   /* Slate 800 */
+  --color-brand-border: rgba(255, 255, 255, 0.05);
 }
 
 :root {
-  background-color: #000023;
-  color: #f8fafc;
+  background-color: #0b1120;
+  color: #cbd5e1; /* Slate 300 for softer body text contrast */
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 1.2s cubic-bezier(0.2, 0, 0, 1);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-effect {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-brand-border);
 }

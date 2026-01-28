@@ -87,7 +87,7 @@ const StarryBackground = () => {
         
         if (distance < connectionDistance) {
            ctx.shadowBlur = 10 * (1 - distance / connectionDistance);
-           ctx.shadowColor = "blue";
+           ctx.shadowColor = "#38bdf8"; // Matches brand-accent
            
            if (distance < connectionDistance * 0.6) {
               const rayFactor = 1 - distance / (connectionDistance * 0.6);

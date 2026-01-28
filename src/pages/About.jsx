@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Section from '../components/ui/Section';
+import Container from '../components/ui/Container';
+import Card from '../components/ui/Card';
 
 export default function About() {
   const [activeAcronym, setActiveAcronym] = useState(null);
@@ -23,65 +26,106 @@ export default function About() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-white mb-6 border-b pb-2">About Me</h2>
-      <div className="p-10 bg-brand-dark rounded-xl border border-dashed border-white/10 text-gray-300 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction">
-        <div className="text-lg leading-relaxed space-y-6">
-          <div>
-            I build modern backend and full-stack systems using{' '}
-            <button
-              onClick={() => toggle('FLOW')}
-              className={`font-bold transition-all duration-300 px-3 py-1 rounded cursor-pointer ${
-                activeAcronym === 'FLOW' 
-                  ? 'bg-brand-blue text-white shadow-lg scale-105' 
-                  : 'text-brand-blue hover:bg-brand-blue/10 hover:scale-105'
-              }`}
-            >
-              F.L.O.W.
-            </button>
+    <Section>
+      <Container className="max-w-4xl">
+        <header className="mb-16 no-star-interaction">
+          <h2 className="text-xs font-bold tracking-[0.4em] text-slate-500 uppercase mb-3">
+            Systemic Approach
+          </h2>
+          <div className="flex items-center gap-6">
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-100 tracking-tight">
+              Philosophy
+            </h3>
+            <div className="h-px flex-grow bg-white/5"></div>
           </div>
+        </header>
 
-          {activeAcronym === 'FLOW' && (
-            <ul className="bg-brand-dark-blue/50 p-6 rounded-lg border-l-4 border-brand-blue ml-4 animate-fade-in shadow-inner">
-              {flowItems.map((item) => (
-                <li key={item.letter} className="mb-2 last:mb-0">
-                  <span className="font-bold text-brand-blue text-xl">{item.letter}</span>
-                  <span className="text-gray-400">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          )}
+        <Card variant="default" className="space-y-12 border-white/[0.03]">
+          <div className="text-lg leading-relaxed text-slate-400 space-y-12 no-star-interaction">
+            <div className="relative">
+              <p className="inline align-middle">
+                I architect backend infrastructures through a methodology focused on logical consistency:
+              </p>
+              <button
+                onClick={() => toggle('FLOW')}
+                aria-expanded={activeAcronym === 'FLOW'}
+                aria-controls="flow-list"
+                className={`ml-3 align-middle transition-all duration-500 px-4 py-1.5 rounded-lg inline-flex items-center gap-3 cursor-pointer focus:outline-none border ${
+                  activeAcronym === 'FLOW' 
+                    ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/40 shadow-sm shadow-brand-accent/10' 
+                    : 'text-slate-500 border-white/10 bg-white/5 hover:border-white/20 hover:text-slate-300'
+                }`}
+              >
+                <span className="font-mono font-bold tracking-tighter">F.L.O.W.</span>
+                <svg className={`w-3 h-3 transition-transform duration-500 ${activeAcronym === 'FLOW' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
 
-          <div>
-            I ensure robust delivery and operations with{' '}
-            <button
-              onClick={() => toggle('STACK')}
-              className={`font-bold transition-all duration-300 px-3 py-1 rounded cursor-pointer ${
-                activeAcronym === 'STACK' 
-                  ? 'bg-brand-orange text-white shadow-lg scale-105' 
-                  : 'text-brand-orange hover:bg-brand-orange/10 hover:scale-105'
-              }`}
-            >
-              S.T.A.C.K.
-            </button>
+              {activeAcronym === 'FLOW' && (
+                <div 
+                  id="flow-list"
+                  className="mt-8 bg-brand-dark/40 p-8 rounded-xl border border-white/5 animate-fade-in"
+                >
+                  <ul className="grid grid-cols-1 gap-6">
+                    {flowItems.map((item) => (
+                      <li key={item.letter} className="flex gap-6 items-start">
+                        <span className="font-mono font-bold text-brand-accent text-2xl leading-none w-6">{item.letter}</span>
+                        <div className="pt-0.5">
+                          <span className="text-slate-300 font-normal text-lg">{item.text}</span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <div className="relative">
+              <p className="inline align-middle">
+                Ensuring production-grade resilience and automated delivery with a solid
+              </p>
+              <button
+                onClick={() => toggle('STACK')}
+                aria-expanded={activeAcronym === 'STACK'}
+                aria-controls="stack-list"
+                className={`ml-3 align-middle transition-all duration-500 px-4 py-1.5 rounded-lg inline-flex items-center gap-3 cursor-pointer focus:outline-none border ${
+                  activeAcronym === 'STACK' 
+                    ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/40 shadow-sm shadow-brand-accent/10' 
+                    : 'text-slate-500 border-white/10 bg-white/5 hover:border-white/20 hover:text-slate-300'
+                }`}
+              >
+                <span className="font-mono font-bold tracking-tighter">S.T.A.C.K.</span>
+                <svg className={`w-3 h-3 transition-transform duration-500 ${activeAcronym === 'STACK' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {activeAcronym === 'STACK' && (
+                <div 
+                  id="stack-list"
+                  className="mt-8 bg-brand-dark/40 p-8 rounded-xl border border-white/5 animate-fade-in"
+                >
+                  <ul className="grid grid-cols-1 gap-6">
+                    {stackItems.map((item) => (
+                      <li key={item.letter} className="flex gap-6 items-start">
+                        <span className="font-mono font-bold text-brand-accent text-2xl leading-none w-6">{item.letter}</span>
+                        <div className="pt-0.5">
+                          <span className="text-slate-300 font-normal text-lg">{item.text}</span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <footer className="text-slate-500 mt-16 pt-10 border-t border-white/5 text-center text-sm tracking-wide">
+              Prioritizing <span className="text-slate-300 font-mono font-bold mx-1">STACK</span> resilience over <span className="text-slate-300 font-mono font-bold mx-1">FLOW</span> agility for long-term stability.
+            </footer>
           </div>
-
-          {activeAcronym === 'STACK' && (
-            <ul className="bg-brand-dark-blue/50 p-6 rounded-lg border-l-4 border-brand-orange ml-4 animate-fade-in shadow-inner">
-              {stackItems.map((item) => (
-                <li key={item.letter} className="mb-2 last:mb-0">
-                  <span className="font-bold text-brand-orange text-xl">{item.letter}</span>
-                  <span className="text-gray-400">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <p className="italic text-gray-400 mt-8 border-t border-white/5 pt-6 text-center">
-            You could say I prioritize <span className="text-brand-orange font-bold">STACK</span> over <span className="text-brand-blue font-bold">FLOW</span> :)
-          </p>
-        </div>
-      </div>
-    </div>
+        </Card>
+      </Container>
+    </Section>
   );
 }

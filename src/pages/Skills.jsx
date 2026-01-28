@@ -1,7 +1,11 @@
+import Section from '../components/ui/Section';
+import Container from '../components/ui/Container';
+import Card from '../components/ui/Card';
+
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Hard Skills",
+      title: "Core Technologies",
       skills: [
         { name: "Python, PHP, Java", level: "Advanced" },
         { name: "Flask, Django, FastAPI", level: "Advanced" },
@@ -11,28 +15,25 @@ export default function Skills() {
         { name: "Docker, Kubernetes", level: "Intermediate" },
         { name: "Linux, Bash scripting", level: "Advanced" },
         { name: "HTML, CSS, JS", level: "Advanced" },
-        { name: "AWS (S3, DynamoDB, Event Bridge, Cloud Watch, Workflows, Serverless)", level: "Intermediate" },
-        { name: "(Rest) API, PostMan", level: "Advanced" },
+        { name: "AWS Ecosystem", level: "Intermediate" },
+        { name: "(Rest) API, Postman", level: "Advanced" },
         { name: "SQL, RDBMS", level: "Advanced" },
-        { name: "Networks", level: "Intermediate" },
-        { name: "Jira, Agile, Scrum", level: "Advanced" }
+        { name: "Network Architecture", level: "Intermediate" },
+        { name: "Agile, Scrum, Jira", level: "Advanced" }
       ]
     },
     {
-      title: "Soft Skills",
+      title: "Engineering Mindset",
       skills: [
-        { name: "System thinking", level: "" },
-        { name: "Problem-solving", level: "" },
-        { name: "Analytical mind", level: "" },
-        { name: "Precision and accuracy", level: "" },
-        { name: "Time Management", level: "" },
-        { name: "Adaptability", level: "" },
-        { name: "Curiosity", level: "" },
-        { name: "Committed team member", level: "" }
+        { name: "Systems Thinking", level: "" },
+        { name: "Analytical Problem-Solving", level: "" },
+        { name: "Architecture Precision", level: "" },
+        { name: "Adaptive Methodology", level: "" },
+        { name: "Committed Team Leadership", level: "" }
       ]
     },
     {
-      title: "Languages",
+      title: "Linguistic Proficiency",
       skills: [
         { name: "Russian", level: "Native" },
         { name: "English", level: "Proficient" },
@@ -43,37 +44,51 @@ export default function Skills() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">Skills & Competencies</h2>
-      
-      <div className="space-y-10">
-        {skillCategories.map((category, idx) => (
-          <div key={idx}>
-            <h3 className="text-4xl font-bold text-brand-purple mb-6 flex items-center no-star-interaction">
-              <span className="w-2 h-8 bg-brand-orange rounded-full mr-3 shadow-[0_0_8px_rgba(242,153,74,0.6)]"></span>
-              {category.title}
+    <Section>
+      <Container className="max-w-5xl">
+        <header className="mb-16 no-star-interaction">
+          <h2 className="text-xs font-bold tracking-[0.4em] text-slate-500 uppercase mb-3">
+            Technical Stack
+          </h2>
+          <div className="flex items-center gap-6">
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-100 tracking-tight">
+              Skills & Competencies
             </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {category.skills.map((skill, sIdx) => (
-                <div 
-                  key={sIdx} 
-                  className="flex justify-between items-center p-4 bg-brand-dark rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all group"
-                >
-                  <span className="text-white font-medium group-hover:text-white transition-colors">
-                    {skill.name}
-                  </span>
-                  {skill.level && (
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-brand-purple/10 text-brand-purple rounded border border-brand-purple/20">
-                      {skill.level}
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
+            <div className="h-px flex-grow bg-white/5"></div>
           </div>
-        ))}
-      </div>
-    </div>
+        </header>
+        
+        <div className="space-y-16">
+          {skillCategories.map((category, idx) => (
+            <div key={idx} className="space-y-8 no-star-interaction">
+              <h4 className="text-xl font-bold text-white/90 flex items-center gap-4">
+                <span className="text-brand-accent font-mono">0{idx + 1}.</span>
+                {category.title}
+                <div className="h-px w-12 bg-white/10"></div>
+              </h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {category.skills.map((skill, sIdx) => (
+                  <Card 
+                    key={sIdx} 
+                    variant="interactive"
+                    className="p-4 md:p-5 flex justify-between items-center group border-white/[0.03]"
+                  >
+                    <span className="text-slate-300 font-medium group-hover:text-white transition-colors duration-300">
+                      {skill.name}
+                    </span>
+                    {skill.level && (
+                      <span className="text-[10px] font-bold uppercase tracking-[0.15em] px-2.5 py-1 bg-brand-accent/10 text-brand-accent rounded-md border border-brand-accent/20">
+                        {skill.level}
+                      </span>
+                    )}
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </Section>
   );
 }

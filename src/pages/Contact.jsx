@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import Section from '../components/ui/Section';
+import Container from '../components/ui/Container';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 export default function Contact() {
   const [status, setStatus] = useState(""); // "", "submitting", "success", "error"
@@ -23,16 +27,10 @@ export default function Contact() {
         setStatus("success");
         form.reset();
       } else {
-        const result = await response.json();
-        if (result.errors) {
-            // handle errors if needed, for now just generic error
-            setStatus("error");
-        } else {
-            setStatus("error");
-        }
+        setStatus("error");
       }
     } catch (error) {
-      setStatus("error: "+error);
+      setStatus("error");
     }
   };
 
@@ -60,82 +58,89 @@ export default function Contact() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-white mb-8 border-b border-white/10 pb-4">Contact Me</h2>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-6">
-          <p className="text-gray-400 text-lg leading-relaxed">
-            I'm currently open to new opportunities and collaborations. 
-            Feel free to reach out through any of the channels below!
-          </p>
-          
-          <div className="grid gap-4">
-            {contactInfo.map((info, index) => (
-              <a 
-                key={index}
-                href={info.link}
-                target={info.link.startsWith('http') ? "_blank" : "_self"}
-                rel="noopener noreferrer"
-                className="flex items-center p-4 bg-brand-dark rounded-xl border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction transition-all group"
-              >
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-4 bg-white/5 group-hover:bg-brand-purple/20 transition-colors`}>
-                  <div className={`w-2 h-2 rounded-full ${index % 2 === 0 ? 'bg-brand-purple shadow-[0_0_8px_rgba(155,81,224,0.8)]' : 'bg-brand-orange shadow-[0_0_8px_rgba(242,153,74,0.8)]'}`}></div>
-                </div>
-                <div>
-                  <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">{info.label}</div>
-                  <div className="text-gray-200 font-semibold group-hover:text-white transition-colors">{info.value}</div>
-                </div>
-              </a>
-            ))}
+    <Section>
+      <Container className="max-w-5xl">
+        <header className="mb-16 no-star-interaction">
+          <h2 className="text-xs font-bold tracking-[0.4em] text-slate-500 uppercase mb-3">
+            Get In Touch
+          </h2>
+          <div className="flex items-center gap-6">
+            <h3 className="text-3xl md:text-5xl font-bold text-slate-100 tracking-tight">
+              Contact
+            </h3>
+            <div className="h-px flex-grow bg-white/5"></div>
           </div>
-        </div>
-
-        <div className="bg-brand-dark rounded-2xl p-8 border border-white/5 shadow-[inset_0_2px_8px_rgba(0,0,0,0.6)] no-star-interaction relative overflow-hidden">
-          <h3 className="text-xl font-bold text-white mb-6">Send a Quick Message</h3>
-          
-          {status === "success" ? (
-            <div className="absolute inset-0 bg-brand-dark flex flex-col items-center justify-center p-8 text-center animate-in fade-in zoom-in duration-300">
-               <div className="w-16 h-16 bg-brand-green/20 rounded-full flex items-center justify-center mb-4">
-                 <svg className="w-8 h-8 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-               </div>
-               <h4 className="text-2xl font-bold text-white mb-2">Message Sent!</h4>
-               <p className="text-gray-400">Thanks for reaching out. I'll get back to you soon.</p>
-               <button onClick={() => setStatus("")} className="mt-6 text-brand-purple font-medium hover:text-white transition-colors">Send another message</button>
-            </div>
-          ) : (
-             <form className="space-y-4" onSubmit={handleSubmit}>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Name</label>
-                  <input type="text" name="name" className="w-full px-4 py-2 bg-brand-dark border border-white/10 rounded-lg text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent outline-none transition" placeholder="Your Name" required disabled={status === "submitting"} />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Email</label>
-                  <input type="email" name="email" className="w-full px-4 py-2 bg-brand-dark border border-white/10 rounded-lg text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent outline-none transition" placeholder="your@email.com" required disabled={status === "submitting"} />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Message</label>
-                  <textarea name="message" rows="4" className="w-full px-4 py-2 bg-brand-dark border border-white/10 rounded-lg text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent outline-none transition resize-none" placeholder="How can I help you?" required disabled={status === "submitting"}></textarea>
-                </div>
-                
-                {status === "error" && (
-                  <div className="text-brand-pink text-sm text-center">
-                    Something went wrong. Please try again.
+        </header>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="space-y-10 no-star-interaction">
+            <p className="text-slate-400 text-lg leading-relaxed max-w-md">
+              I'm currently open to new opportunities and technical collaborations. 
+              Let's connect and discuss your project or vision.
+            </p>
+            
+            <div className="grid gap-4">
+              {contactInfo.map((info, index) => (
+                <a 
+                  key={index}
+                  href={info.link}
+                  target={info.link.startsWith('http') ? "_blank" : "_self"}
+                  rel="noopener noreferrer"
+                  className="flex items-center p-5 bg-white/[0.02] rounded-xl border border-white/[0.05] transition-all duration-300 group hover:bg-white/[0.05] hover:border-brand-accent/30"
+                >
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-5 bg-white/5 group-hover:bg-brand-accent/10 transition-colors">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-accent shadow-[0_0_8px_rgba(56,189,248,0.6)]"></div>
                   </div>
-                )}
+                  <div>
+                    <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">{info.label}</div>
+                    <div className="text-slate-200 font-semibold group-hover:text-white transition-colors">{info.value}</div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
 
-                <button type="submit" disabled={status === "submitting"} className="w-full py-3 bg-gradient-to-r from-brand-purple to-brand-pink text-white rounded-lg font-bold hover:opacity-90 transition shadow-lg shadow-brand-purple/20 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center">
-                  {status === "submitting" ? (
-                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                  ) : "Send Message"}
-                </button>
-             </form>
-          )}
+          <Card variant="glass" className="no-star-interaction relative overflow-hidden border-white/[0.03]">
+            <h3 className="text-xl font-bold text-white mb-8">Send a Message</h3>
+            
+            {status === "success" ? (
+              <div className="absolute inset-0 bg-brand-dark/95 backdrop-blur-md flex flex-col items-center justify-center p-8 text-center animate-fade-in">
+                 <div className="w-16 h-16 bg-brand-accent/10 rounded-full flex items-center justify-center mb-6">
+                   <svg className="w-8 h-8 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                 </div>
+                 <h4 className="text-2xl font-bold text-white mb-2">Message Received</h4>
+                 <p className="text-slate-400">Thank you for reaching out. I'll get back to you shortly.</p>
+                 <button onClick={() => setStatus("")} className="mt-8 text-brand-accent text-sm font-bold tracking-widest uppercase hover:text-white transition-colors">Send Another</button>
+              </div>
+            ) : (
+               <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="space-y-2">
+                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest">Name</label>
+                    <input type="text" name="name" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:ring-1 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all placeholder:text-slate-700" placeholder="Your Name" required disabled={status === "submitting"} />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest">Email</label>
+                    <input type="email" name="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:ring-1 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all placeholder:text-slate-700" placeholder="your@email.com" required disabled={status === "submitting"} />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest">Message</label>
+                    <textarea name="message" rows="4" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:ring-1 focus:ring-brand-accent focus:border-brand-accent outline-none transition-all resize-none placeholder:text-slate-700" placeholder="How can I help you?" required disabled={status === "submitting"}></textarea>
+                  </div>
+                  
+                  {status === "error" && (
+                    <div className="text-red-400 text-xs font-medium text-center italic">
+                      Transmission failed. Please try again.
+                    </div>
+                  )}
+
+                  <Button type="submit" disabled={status === "submitting"} variant="accent" className="w-full py-4 uppercase tracking-widest text-xs">
+                    {status === "submitting" ? "Transmitting..." : "Send Message"}
+                  </Button>
+               </form>
+            )}
+          </Card>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 }

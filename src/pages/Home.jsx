@@ -1,50 +1,75 @@
 import photo from '../assets/photo.jpg';
+import Section from '../components/ui/Section';
+import Container from '../components/ui/Container';
+import Button from '../components/ui/Button';
 
 export default function Home({ setActivePage }) {
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-4rem)] gap-10 px-4 overflow-hidden">
-      {/* Dynamic Background for Home Page */}
-      <div className="absolute inset-0 bg-brand-dark -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[120px]"></div>
-        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-brand-orange/5 rounded-full blur-[100px]"></div>
+    <Section className="relative flex items-center justify-center min-h-[calc(100vh-4rem)] overflow-hidden">
+      {/* Subtle Depth Background */}
+      <div className="absolute inset-0 bg-brand-dark -z-10" aria-hidden="true">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-800/10 rounded-full blur-[160px] opacity-50"></div>
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[120px] opacity-20"></div>
       </div>
 
-      <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-brand-purple shadow-[0_0_40px_rgba(155,81,224,0.3)] flex-shrink-0 relative z-10 transition-transform duration-500 hover:scale-105">
-        <img 
-          src={photo} 
-          alt="Anna Bushueva" 
-          className="w-full h-full object-cover object-[center_30%]"
-        />
-      </div>
-      
-      <div className="max-w-xl text-center md:text-left space-y-4 relative z-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-          Anna Bushueva
-        </h1>
-        <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-brand-purple via-brand-pink to-brand-orange bg-clip-text text-transparent">
-          Software Engineer / Backend Developer
-        </h2>
-        <p className="text-gray-300 leading-relaxed text-lg font-light">
-          IT professional with a master’s in applied physics and mathematics and 5+ years’
-          experience in IT analysis and processes, with additional hands-on exposure to
-          backend development and cloud tools.
-        </p>
-        <div className="pt-4 flex gap-4 justify-center md:justify-start">
-            <a 
-              href="/CV_Anna_Bushueva.pdf" 
-              download="CV_Anna_Bushueva.pdf"
-              className="px-8 py-3 bg-brand-dark border border-bright-blue/40 text-white rounded-xl font-bold shadow-[0_0_12px_rgba(51,73,139,0.9)] no-star-interaction transition-all duration-300 transform hover:-translate-y-1 hover:bg-black inline-block"
-            >
-                Download CV
-            </a>
-            <button 
-              onClick={() => setActivePage('contact')}
-              className="px-8 py-3 bg-brand-dark border border-brand-pink/40 text-white rounded-xl font-bold shadow-[0_0_12px_rgba(173,87,87,0.9)] no-star-interaction transition-all duration-300 transform hover:-translate-y-1 hover:bg-black cursor-pointer"
-            >
-                Contact Me
-            </button>
+      <Container>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+          {/* Hero Image */}
+          <div className="relative no-star-interaction">
+            <div className="absolute -inset-1 bg-white/5 rounded-full blur-sm"></div>
+            <div className="w-52 h-52 md:w-80 md:h-80 rounded-full overflow-hidden border border-white/10 shadow-2xl flex-shrink-0 relative z-10 grayscale-[0.2] hover:grayscale-0 transition-all duration-1000">
+              <img 
+                src={photo} 
+                alt="Anna Bushueva" 
+                className="w-full h-full object-cover object-[center_30%]"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+          
+          {/* Hero Content */}
+          <div className="max-w-xl text-center md:text-left space-y-10 relative z-10">
+            <div className="space-y-4 no-star-interaction">
+              <h1 className="text-5xl md:text-7xl font-bold text-slate-100 tracking-tighter leading-[0.9]">
+                Anna Bushueva
+              </h1>
+              <div className="flex flex-col md:flex-row md:items-center gap-4">
+                <h2 className="text-sm md:text-base font-bold text-brand-accent tracking-[0.3em] uppercase opacity-80">
+                  Software Engineer
+                </h2>
+                <div className="hidden md:block h-px w-6 bg-white/10"></div>
+                <h2 className="text-sm md:text-base font-medium text-slate-500 tracking-tight italic">
+                  Physics & Mathematics Master
+                </h2>
+              </div>
+            </div>
+            
+            <p className="text-slate-400 leading-relaxed text-lg md:text-xl font-normal max-w-lg no-star-interaction">
+              Specializing in system analysis and backend architecture. 
+              Bridging the gap between mathematical precision and robust software solutions.
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Button 
+                  as="a"
+                  href="/CV_Anna_Bushueva.pdf" 
+                  download="CV_Anna_Bushueva.pdf"
+                  variant="accent"
+                  className="px-8"
+                >
+                    Download CV
+                </Button>
+                <Button 
+                  onClick={() => setActivePage('contact')}
+                  variant="outline"
+                  className="px-8"
+                >
+                    Get in touch
+                </Button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Section>
   );
 }
