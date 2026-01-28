@@ -40,47 +40,9 @@ export default function About() {
           </div>
         </header>
 
-        <Card variant="default" className="space-y-12 border-white/[0.03]">
+        <Card variant="default" className="space-y-12 border-white/[0.03] rounded-md">
           <div className="text-lg leading-relaxed text-slate-400 space-y-12 no-star-interaction">
-            <div className="relative">
-              <p className="inline align-middle">
-                I architect backend infrastructures through a methodology focused on logical consistency:
-              </p>
-              <button
-                onClick={() => toggle('FLOW')}
-                aria-expanded={activeAcronym === 'FLOW'}
-                aria-controls="flow-list"
-                className={`ml-3 align-middle transition-all duration-500 px-4 py-1.5 rounded-lg inline-flex items-center gap-3 cursor-pointer focus:outline-none border ${
-                  activeAcronym === 'FLOW' 
-                    ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/40 shadow-sm shadow-brand-accent/10' 
-                    : 'text-slate-500 border-white/10 bg-white/5 hover:border-white/20 hover:text-slate-300'
-                }`}
-              >
-                <span className="font-mono font-bold tracking-tighter">F.L.O.W.</span>
-                <svg className={`w-3 h-3 transition-transform duration-500 ${activeAcronym === 'FLOW' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {activeAcronym === 'FLOW' && (
-                <div 
-                  id="flow-list"
-                  className="mt-8 bg-brand-dark/40 p-8 rounded-xl border border-white/5 animate-fade-in"
-                >
-                  <ul className="grid grid-cols-1 gap-6">
-                    {flowItems.map((item) => (
-                      <li key={item.letter} className="flex gap-6 items-start">
-                        <span className="font-mono font-bold text-brand-accent text-2xl leading-none w-6">{item.letter}</span>
-                        <div className="pt-0.5">
-                          <span className="text-slate-300 font-normal text-lg">{item.text}</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
+            {/* STACK SECTION - Now on Top */}
             <div className="relative">
               <p className="inline align-middle">
                 Ensuring production-grade resilience and automated delivery with a solid
@@ -89,7 +51,7 @@ export default function About() {
                 onClick={() => toggle('STACK')}
                 aria-expanded={activeAcronym === 'STACK'}
                 aria-controls="stack-list"
-                className={`ml-3 align-middle transition-all duration-500 px-4 py-1.5 rounded-lg inline-flex items-center gap-3 cursor-pointer focus:outline-none border ${
+                className={`ml-3 align-middle transition-all duration-500 px-4 py-1.5 rounded-sm inline-flex items-center gap-3 cursor-pointer focus:outline-none border ${
                   activeAcronym === 'STACK' 
                     ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/40 shadow-sm shadow-brand-accent/10' 
                     : 'text-slate-500 border-white/10 bg-white/5 hover:border-white/20 hover:text-slate-300'
@@ -104,15 +66,13 @@ export default function About() {
               {activeAcronym === 'STACK' && (
                 <div 
                   id="stack-list"
-                  className="mt-8 bg-brand-dark/40 p-8 rounded-xl border border-white/5 animate-fade-in"
+                  className="mt-8 bg-brand-dark/40 p-8 rounded-md border border-white/5 animate-fade-in"
                 >
                   <ul className="grid grid-cols-1 gap-6">
                     {stackItems.map((item) => (
-                      <li key={item.letter} className="flex gap-6 items-start">
-                        <span className="font-mono font-bold text-brand-accent text-2xl leading-none w-6">{item.letter}</span>
-                        <div className="pt-0.5">
-                          <span className="text-slate-300 font-normal text-lg">{item.text}</span>
-                        </div>
+                      <li key={item.letter} className="flex gap-0.5 items-baseline">
+                        <span className="font-mono font-bold text-brand-accent text-2xl leading-none">{item.letter}</span>
+                        <span className="text-slate-300 font-normal text-lg">{item.text}</span>
                       </li>
                     ))}
                   </ul>
@@ -120,8 +80,46 @@ export default function About() {
               )}
             </div>
 
-            <footer className="text-slate-500 mt-16 pt-10 border-t border-white/5 text-center text-sm tracking-wide">
-              Prioritizing <span className="text-slate-300 font-mono font-bold mx-1">STACK</span> resilience over <span className="text-slate-300 font-mono font-bold mx-1">FLOW</span> agility for long-term stability.
+            {/* FLOW SECTION - Now on Bottom */}
+            <div className="relative">
+              <p className="inline align-middle">
+                I architect backend infrastructures through a methodology focused on logical consistency:
+              </p>
+              <button
+                onClick={() => toggle('FLOW')}
+                aria-expanded={activeAcronym === 'FLOW'}
+                aria-controls="flow-list"
+                className={`ml-3 align-middle transition-all duration-500 px-4 py-1.5 rounded-sm inline-flex items-center gap-3 cursor-pointer focus:outline-none border ${
+                  activeAcronym === 'FLOW' 
+                    ? 'bg-brand-accent/10 text-brand-accent border-brand-accent/40 shadow-sm shadow-brand-accent/10' 
+                    : 'text-slate-500 border-white/10 bg-white/5 hover:border-white/20 hover:text-slate-300'
+                }`}
+              >
+                <span className="font-mono font-bold tracking-tighter">F.L.O.W.</span>
+                <svg className={`w-3 h-3 transition-transform duration-500 ${activeAcronym === 'FLOW' ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {activeAcronym === 'FLOW' && (
+                <div 
+                  id="flow-list"
+                  className="mt-8 bg-brand-dark/40 p-8 rounded-md border border-white/5 animate-fade-in"
+                >
+                  <ul className="grid grid-cols-1 gap-6">
+                    {flowItems.map((item) => (
+                      <li key={item.letter} className="flex gap-0.5 items-baseline">
+                        <span className="font-mono font-bold text-brand-accent text-2xl leading-none">{item.letter}</span>
+                        <span className="text-slate-300 font-normal text-lg">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <footer className="text-slate-500 mt-16 pt-10 border-t border-white/5 text-center text-sm tracking-widest italic">
+              Not Stack over Flow — but <span className="text-slate-300 font-mono font-bold mx-1">Stack for Flow</span>
             </footer>
           </div>
         </Card>
