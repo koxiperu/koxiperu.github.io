@@ -31,7 +31,7 @@ export default function Home({ setActivePage }) {
           <div className="max-w-xl text-center md:text-left space-y-10 relative z-10">
             <div className="space-y-4 no-star-interaction">
               <h1 className="text-5xl md:text-7xl font-bold text-slate-100 tracking-tighter leading-[0.9]">
-                Anna Bushueva
+                Anna BUSHUEVA
               </h1>
               <div className="flex flex-col md:flex-row md:items-center gap-4">
                 <h2 className="text-sm md:text-base font-bold text-brand-accent tracking-[0.3em] uppercase opacity-80">
