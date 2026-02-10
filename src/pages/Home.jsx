@@ -22,7 +22,7 @@ export default function Home({ setActivePage }) {
                 src={photo} 
                 alt="Anna Bushueva" 
                 className="w-full h-full object-cover object-[center_30%]"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </div>
           </div>
