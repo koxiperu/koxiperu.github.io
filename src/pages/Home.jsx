@@ -1,4 +1,4 @@
-import photo from '../assets/photo.jpg';
+import photo from '../assets/photo.png';
 import Section from '../components/ui/Section';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
