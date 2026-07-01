@@ -4,6 +4,33 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
 export default function Projects() {
+  const projects = [
+    {
+      codename: 'EduJob_Tracker',
+      title: 'EduJob Application Tracker',
+      description:
+        'Full-stack SPA to manage job and academic applications. Stateless JWT security with role-based access, a real-time analytics dashboard with automated deadline alerts, and document management backed by PostgreSQL.',
+      tech: ['Java 21', 'Spring Boot', 'PostgreSQL', 'React 19', 'Tailwind'],
+      link: 'https://github.com/koxiperu/edujobapp-backend',
+    },
+    {
+      codename: 'StockViser',
+      title: 'StockViser',
+      description:
+        'AI-enhanced portfolio tracker that synchronises real-time market news with stock symbols and runs asynchronous sentiment analysis to automate due diligence for retail investors.',
+      tech: ['PHP 8', 'Laravel 10', 'OpenAI API', 'MySQL', 'Docker'],
+      link: 'https://github.com/koxiperu/StockViser',
+    },
+    {
+      codename: 'CV_Orchestrator',
+      title: 'AI-Agentic Application Orchestrator',
+      description:
+        'End-to-end automation that generates tailored CVs and motivation letters with LLMs — dynamically analysing job descriptions and mapping them to a master profile with LaTeX-perfect output.',
+      tech: ['Python', 'FastAPI', 'Gemini API', 'Jinja2', 'LaTeX'],
+      link: null,
+    },
+  ];
+
   return (
     <Section>
       <Container className="max-w-5xl">
@@ -20,24 +47,23 @@ export default function Projects() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {[1, 2].map((i) => (
-            <Card key={i} variant="interactive" className="no-star-interaction group flex flex-col h-full overflow-hidden border-white/[0.03]">
+          {projects.map((project) => (
+            <Card key={project.codename} variant="interactive" className="no-star-interaction group flex flex-col h-full overflow-hidden border-white/[0.03]">
               <div className="aspect-video mb-8 bg-slate-900/50 rounded-xl border border-white/5 flex items-center justify-center overflow-hidden relative">
                 <div className="absolute inset-0 bg-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <span className="text-slate-600 font-mono tracking-widest text-[10px] uppercase">
-                  Project_Visualization_0{i}.exe
+                  {project.codename}
                 </span>
               </div>
               <div className="space-y-6 flex-grow">
                 <h4 className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors duration-500">
-                  Enterprise Backend System {i}
+                  {project.title}
                 </h4>
                 <p className="text-slate-400 leading-relaxed">
-                  Advanced architecture implementing scalable microservices and high-throughput data pipelines. 
-                  Focused on system resilience and performance optimization in cloud environments.
+                  {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
-                  {['Python', 'FastAPI', 'Docker', 'AWS'].map(tech => (
+                  {project.tech.map((tech) => (
                     <span key={tech} className="text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 bg-white/5 text-slate-500 rounded-md border border-white/5">
                       {tech}
                     </span>
@@ -45,9 +71,22 @@ export default function Projects() {
                 </div>
               </div>
               <div className="pt-10 mt-auto">
-                <Button variant="outline" className="w-full text-xs font-bold tracking-widest uppercase py-3">
-                  View Case Study
-                </Button>
+                {project.link ? (
+                  <Button
+                    as="a"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outline"
+                    className="w-full text-xs font-bold tracking-widest uppercase py-3"
+                  >
+                    View on GitHub
+                  </Button>
+                ) : (
+                  <div className="w-full text-center text-[10px] font-bold tracking-widest uppercase py-3 text-slate-600 border border-white/5 rounded-sm">
+                    Private Repository
+                  </div>
+                )}
               </div>
             </Card>
           ))}
@@ -55,7 +94,15 @@ export default function Projects() {
 
         <div className="mt-20 text-center no-star-interaction">
           <p className="text-slate-600 text-sm italic tracking-wide">
-            Additional repositories available on my technical profiles.
+            More repositories on{' '}
+            <a
+              href="https://github.com/koxiperu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-brand-accent transition-colors not-italic font-mono"
+            >
+              github.com/koxiperu
+            </a>
           </p>
         </div>
       </Container>
